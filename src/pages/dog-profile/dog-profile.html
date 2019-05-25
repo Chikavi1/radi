@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-navbar color="titlename" >
+    <ion-title center>{{nombre}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+	<ion-img style="width: 100%; height: 320px;" src="/assets/imgs/radiador.jpeg"></ion-img>
+
+	
+	<ion-grid id="sectionInfo">
+		<ion-row>
+			<ion-col>
+				<p>Especie: {{especie }} </p>
+				<p>Color: {{color}}</p>
+			</ion-col>
+
+			<ion-col>
+				<p>	Raza: {{raza}}</p>
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+
+<ion-card id="description">
+
+  <ion-card-header>
+     Señas Particulares: 
+  </ion-card-header>
+
+  <ion-card-content>
+    {{senas}}
+  </ion-card-content>
+
+</ion-card>
+
+<ion-card id="notes">
+
+  <ion-card-header>
+     Notas
+  </ion-card-header>
+
+  <ion-card-content>
+    {{notes}}
+  </ion-card-content>
+
+</ion-card>
+
+	<ion-list color="primary">
+
+	    <button ion-item (click)="showvaccinations()" >
+	      <ion-icon  item-start name="paw"></ion-icon>
+	      Programa de Vacunacion
+	    </button>
+		<button ion-item (click)="showdeworming()">
+		   <ion-icon  item-start name="medkit"></ion-icon>
+		      Programa de Desparasitación
+		</button>
+  </ion-list>
+		<div *ngIf="!adoptado">
+			<button ion-button color="cut-green" block> Adoptar!</button>
+		</div>
+		<div *ngIf="adoptado">
+			<button ion-button color="primary" block> ¿Quien es su dueño?</button>
+		</div>
+</ion-content>
