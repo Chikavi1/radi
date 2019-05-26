@@ -1,0 +1,79 @@
+<!--
+  Generated template for the FormAdoptPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Formulario de Adopción</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+<p text-center>Porfavor contesta el siguiente formulario</p>
+<ion-list>
+
+  <ion-item>
+    <ion-label floating>Nombre</ion-label>
+    <ion-input type="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>telefono</ion-label>
+    <ion-input type="cellphone"></ion-input>
+  </ion-item>
+
+
+  <ion-item>
+    <ion-label>vivienda</ion-label>
+    <ion-select [(ngModel)]="vivienda" multiple="false" cancelText="cancelar" okText="esta bien!">
+      <ion-option value="bacon" selected="true">CASA</ion-option>
+      <ion-option value="olives">DEPARTAMENTO</ion-option>
+      <ion-option value="xcheese" >CONDOMONIO</ion-option>
+    </ion-select>
+  </ion-item>
+
+<ion-item>
+    <ion-label>DORMIRA...</ion-label>
+    <ion-select [(ngModel)]="dormir" multiple="false" cancelText="cancelar" okText="esta bien!">
+      <ion-option value="bacon" selected="true">ADENTRO</ion-option>
+      <ion-option value="olives">AFUERA</ion-option>
+      <ion-option value="xcheese" >AUN NO LO SE</ion-option>
+    </ion-select>
+  </ion-item>
+
+
+<ion-item>
+    <ion-label>¿HAS ADOPTADO ANTERIORMENTE?</ion-label>
+    <ion-select [(ngModel)]="adopcion" multiple="false" cancelText="cancelar" okText="esta bien!">
+      <ion-option value="bacon" selected="true">SI</ion-option>
+      <ion-option value="olives">NO</ion-option>
+    </ion-select>
+  </ion-item>
+
+<ion-item>
+    <ion-label>¿TODOS LOS HABITANTES ESTAN DE ACUERDO QUE ADOPTES?</ion-label>
+    <ion-select [(ngModel)]="de_acuerdo" multiple="false" cancelText="cancelar" okText="esta bien!">
+      <ion-option value="bacon" selected="true">SI</ion-option>
+      <ion-option value="olives">NO</ion-option>
+    </ion-select>
+  </ion-item>
+
+	<p text-center>¿Si el comportamiento del animalito no es el que usted desea (jugueton, mordelon, inquieto, mimado, rebelde), qué medidas tomaría?</p>
+<ion-item>
+  <ion-textarea ></ion-textarea>
+</ion-item>
+
+</ion-list>
+<div text-center>
+  <a (click)="alert()">Terminos y condiciones</a><br>
+</div>
+
+<button ion-button block secondary (click)="goToFinish()">
+	Continuar
+</button>
+</ion-content>

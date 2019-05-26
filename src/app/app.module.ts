@@ -12,6 +12,15 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import {VaccinationsPage} from '../pages/vaccinations/vaccinations';
 import {DewormingsPage} from '../pages/dewormings/dewormings';
+import { FormAdoptPage } from '../pages/form-adopt/form-adopt';
+
+import { DonationsPage } from '../pages/donations/donations';
+import { EventsPage } from '../pages/events/events';
+import { InfoPage } from '../pages/info/info';
+import { TerminosPage } from '../pages/terminos/terminos';
+import { FinishFormAdoptPage } from '../pages/finish-form-adopt/finish-form-adopt';
+
+
 
 @NgModule({
   declarations: [
@@ -20,7 +29,14 @@ import {DewormingsPage} from '../pages/dewormings/dewormings';
     ListPage,
     DogProfilePage,
     VaccinationsPage,
-    DewormingsPage
+    DewormingsPage,
+    FormAdoptPage,
+    DonationsPage,
+EventsPage,
+InfoPage,
+TerminosPage,
+FinishFormAdoptPage
+
   ],
   imports: [
     BrowserModule,
@@ -33,7 +49,14 @@ import {DewormingsPage} from '../pages/dewormings/dewormings';
     ListPage,
     DogProfilePage,
     VaccinationsPage,
-    DewormingsPage
+    DewormingsPage,
+    FormAdoptPage,
+    DonationsPage,
+EventsPage,
+InfoPage,
+TerminosPage,
+FinishFormAdoptPage
+
   ],
   providers: [
     StatusBar,
