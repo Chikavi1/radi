@@ -11,12 +11,15 @@ import { InfoPage } from '../pages/info/info';
 import { FormAdoptPage } from '../pages/form-adopt/form-adopt';
 import { DogProfilePage } from '../pages/dog-profile/dog-profile';
 
+import { timer } from 'rxjs/observable/timer';
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
+  showSplash = true; // <-- show animation
+  
   rootPage: any = HomePage;
 
   pages: Array<{title: string, component: any}>;
@@ -41,6 +44,8 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+
+      timer(3000).subscribe(() => this.showSplash = false) 
     });
   }
 
