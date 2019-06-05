@@ -18,7 +18,7 @@ export class HomePage {
 scan(){
 	this.barcodeScanner.scan().then(barcodeData => {
 	 console.log('Barcode data', barcodeData);
-     this.AP.searchQrCode(barcodeData).subscribe(
+     this.AP.searchQrCode(barcodeData.text).subscribe(
        (data) => {
          console.log(data),
          this.goToProfileDog(data);
