@@ -23,9 +23,6 @@ export class FinishFormAdoptPage {
 
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad FinishFormAdoptPage');
-  }
 cerrar() {
   this.viewCtrl.dismiss();
 

@@ -17,15 +17,18 @@
 
 
 <ion-content padding>
-<ion-card>
-  <img src="https://img.chilango.com/2018/03/Salchicha-disfr%C3%A1z-primavera-.jpg"/>
+
+<ion-card *ngFor="let event of events">
+  <img src="https://www.chikavi.com/{{event.imagen}}"/>
   <ion-card-content>
     <ion-card-title>
-     Campaña de vacunacion
+    {{event.titulo}}
       </ion-card-title>
-    <p>
-      Enterate que dias puedes traer a tus amiguitos a vacunar.
+    <p  [innerHTML]="event.descripcion">
     </p>
+    <p>{{ event.fecha | date:"dd MMMM yyyy"}}</p>
   </ion-card-content>
 </ion-card>
+
+
 </ion-content>

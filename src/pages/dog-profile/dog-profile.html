@@ -1,27 +1,29 @@
 <ion-header>
   <ion-navbar color="titlename" >
-    <ion-title center>{{nombre}}</ion-title>
+    <ion-title center>{{dog.nombre}}</ion-title>
   </ion-navbar>
 </ion-header>
 
 
 <ion-content>
-	<ion-img style="width: 100%; height: 320px;" src="/assets/imgs/radiador.jpeg"></ion-img>
+	<ion-card>
+		 <img src="https://www.chikavi.com/{{dog.imagen}}"/>
+	</ion-card>
 
 	<ion-grid id="sectionInfo" >
 		<ion-row >
 			<ion-col text-center>
 				<p class="clave">Especie: </p>
-				<p>{{especie }}</p>
+				<p>{{dog.especie }}</p>
 				<p class="clave">Color: </p>
-				<p>{{color}}</p>
+				<p>{{dog.color}}</p>
 			</ion-col>
 
 			<ion-col text-center>
 				<p class="clave">Raza:</p>
-				<p>{{raza}}</p>
+				<p>{{dog.raza}}</p>
 				<p class="clave">sexo:</p>
-				<p>{{sexo}}</p>
+				<p>{{dog.sexo}}</p>
 
 			</ion-col>
 		</ion-row>
@@ -32,8 +34,8 @@
      Señas Particulares: 
   </ion-card-header>
 
-  <ion-card-content>
-    {{senas}}
+  <ion-card-content [innerHTML]="dog.senas">
+    
   </ion-card-content>
 
 </ion-card>
@@ -44,8 +46,7 @@
      Notas
   </ion-card-header>
 
-  <ion-card-content>
-    {{notes}}
+  <ion-card-content [innerHTML]="dog.notas">
   </ion-card-content>
 
 </ion-card>

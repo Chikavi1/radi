@@ -19,10 +19,6 @@ export class TerminosPage {
   constructor(public navCtrl: NavController, public navParams: NavParams,public  viewCtrl: ViewController, public modalCtrl:ModalController) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad TerminosPage');
-  }
-
 cerrar() {
   this.viewCtrl.dismiss();
 

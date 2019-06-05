@@ -6,12 +6,11 @@ import { NavController, NavParams } from 'ionic-angular';
   templateUrl: 'vaccinations.html',
 })
 export class VaccinationsPage {
+  vaccinations:any = {};
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.vaccinations = this.navParams.get("vaccinations");
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad VaccinationsPage');
-  }
 
 }

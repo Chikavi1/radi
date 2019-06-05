@@ -6,8 +6,10 @@ import {  NavController, NavParams } from 'ionic-angular';
   templateUrl: 'dewormings.html',
 })
 export class DewormingsPage {
+	dewormings:any = {};
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+  	this.dewormings = this.navParams.get("dewormings");
   }
 
 }

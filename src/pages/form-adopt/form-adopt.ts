@@ -4,28 +4,42 @@ import { ModalController } from 'ionic-angular';
 
 import { TerminosPage } from '../terminos/terminos';
 import { FinishFormAdoptPage } from '../finish-form-adopt/finish-form-adopt';
-
-/**
- * Generated class for the FormAdoptPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ApiProvider } from '../../providers/api/api';
 @IonicPage()
 @Component({
   selector: 'page-form-adopt',
   templateUrl: 'form-adopt.html',
 })
 export class FormAdoptPage {
+ myForm: FormGroup;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public modalCtrl: ModalController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+    public modalCtrl: ModalController,public formBuilder: FormBuilder, public Api: ApiProvider) {
+     this.myForm = this.createMyForm();
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad FormAdoptPage');
+  private createMyForm(){
+    return this.formBuilder.group({
+      nombre: ['', Validators.required],
+      telefono: ['', Validators.required],
+      vivienda: ['', Validators.required],
+      dormir: ['', Validators.required],
+      adopcion: ['', Validators.required],
+      de_acuerdo: ['', Validators.required],
+      medidas: ['', Validators.required],
+    });
   }
-  
+
+
+  saveData(){
+
+    console.log(this.myForm.value);
+    this.Api.solicitud(this.myForm.value).subscribe(response  => console.log(response));
+    this.goToFinish();
+  }
+
+
   alert(){
   	this.presentModal();
   }

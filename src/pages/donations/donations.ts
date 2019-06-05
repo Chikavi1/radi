@@ -17,9 +17,5 @@ export class DonationsPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad DonationsPage');
-  }
-
+ 
 }
