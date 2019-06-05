@@ -16,8 +16,8 @@ import { ComplaintsPage } from '../pages/complaints/complaints';
 import { DonationsPage } from '../pages/donations/donations';
 import { EventsPage } from '../pages/events/events';
 import { InfoPage } from '../pages/info/info';
-
-
+import { SecondaryPage } from '../pages/secondary/secondary';
+import { SecondaryPageInfoPage } from '../pages/secondary-page-info/secondary-page-info';
 
 import { TerminosPage } from '../pages/terminos/terminos';
 import { FinishFormAdoptPage } from '../pages/finish-form-adopt/finish-form-adopt';
@@ -44,7 +44,9 @@ registerLocaleData(localeEs);
     InfoPage,
     TerminosPage,
     FinishFormAdoptPage,
-    ComplaintsPage
+    ComplaintsPage,
+    SecondaryPage,
+    SecondaryPageInfoPage
 
   ],
   imports: [
@@ -65,7 +67,9 @@ registerLocaleData(localeEs);
     InfoPage,
     TerminosPage,
     FinishFormAdoptPage,
-    ComplaintsPage
+    ComplaintsPage,
+    SecondaryPage,
+    SecondaryPageInfoPage
 
   ],
   providers: [

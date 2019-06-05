@@ -18,15 +18,15 @@
 
 <ion-content padding>
 
-<ion-card *ngFor="let event of events">
+<ion-card *ngFor="let event of events" (click)="goToSecondary(event)">
   <img src="https://www.chikavi.com/{{event.imagen}}"/>
   <ion-card-content>
     <ion-card-title>
     {{event.titulo}}
       </ion-card-title>
-    <p  [innerHTML]="event.descripcion">
-    </p>
-    <p>{{ event.fecha | date:"dd MMMM yyyy"}}</p>
+    <p class="texr" >
+      ver mas...
+   </p>
   </ion-card-content>
 </ion-card>
 

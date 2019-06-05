@@ -1,0 +1,36 @@
+<!--
+  Generated template for the SecondaryPageInfoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{datos.titulo}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<ion-card>
+		 <img src="{{datos.imagen}}"/>
+		 <p text-center>{{datos.texto}}</p>
+
+		 <div *ngIf=datos.administradores>
+
+		 	<ion-list *ngFor="let admin of datos.administradores">
+			  <ion-item>
+			    <ion-avatar item-start>
+			      <img src="{{admin.imagen}}">
+			    </ion-avatar>
+			    <h2>{{admin.nombre}}</h2>
+			    <p>{{ admin.cargo }}</p>
+			    <p>{{ admin.correo }}</p>
+			    <p>{{ admin.numero }}</p>
+			  </ion-item>
+			</ion-list>
+		 </div>
+	</ion-card>
+</ion-content>

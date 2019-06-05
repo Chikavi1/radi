@@ -11,13 +11,13 @@ import { ApiProvider } from '../../providers/api/api';
 export class HomePage {
 
   constructor(public navCtrl: NavController,private barcodeScanner: BarcodeScanner,
-  	public AP:ApiProvider,public ToastCtrl:ToastController) {
+    public AP:ApiProvider,public ToastCtrl:ToastController) {
 
   }
 
 scan(){
-	this.barcodeScanner.scan().then(barcodeData => {
-	 console.log('Barcode data', barcodeData);
+  this.barcodeScanner.scan().then(barcodeData => {
+   console.log('Barcode data', barcodeData);
      this.AP.searchQrCode(barcodeData.text).subscribe(
        (data) => {
          console.log(data),
@@ -26,25 +26,25 @@ scan(){
        },
        (error) =>{  this.mostrar_mensaje(error.error.text)}
        );
-	}).catch(err => {
-	    console.log('Error', err);
-	});
+  }).catch(err => {
+      console.log('Error', err);
+  });
 
-	
+  
 }
 
 mostrar_mensaje(mensaje){
-	
+  
   let toast = this.ToastCtrl.create({
     message: mensaje,
     duration: 3000,
     position: 'bottom'
   });
 
-  toast.present();  	
+  toast.present();    
 }
 
 goToProfileDog(dog : any){ 
-	this.navCtrl.push(DogProfilePage,{dog : dog});
+  this.navCtrl.push(DogProfilePage,{dog : dog});
 }
 }

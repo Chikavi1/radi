@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ApiProvider } from '../../providers/api/api';
+import { SecondaryPage } from '../secondary/secondary';
 
 @IonicPage()
 @Component({
@@ -15,7 +16,14 @@ export class EventsPage {
   			(error) => {console.log(error)}
   			);
   }
+  navOptions = {
+	animation: 'md-transition',
+	duration: 1500
+};
 
+goToSecondary(data){
+	this.navCtrl.push(SecondaryPage,{datos : data},this.navOptions);
+}
 
 
 

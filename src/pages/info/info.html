@@ -19,19 +19,9 @@
 <ion-content padding>
 <ion-content class="card-background-page">
 
-  <ion-card>
-    <img src="https://bucket1.glanacion.com/anexos/fotos/02/2749002w380.jpg"/>
-    <div class="card-title">rescate perruno</div>
-  </ion-card>
-
-  <ion-card>
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbiPSelbDfEdnMVmTDeLBv_ybSgMGh9WMQPgyIZP2Hu7ljWYijVg"/>
-    <div class="card-title">Administradores</div>
-  </ion-card>
-
-  <ion-card>
-    <img src="https://ionicframework.com/docs/v3/dist/preview-app/www/assets/img/card-sf.png"/>
-    <div class="card-title">Impacto</div>
+  <ion-card *ngFor="let dato of data" (click)="goToSecondary(dato)">
+    <img src="{{dato.imagen}}"/>
+    <div class="card-title">{{dato.titulo}}</div>
   </ion-card>
 
 </ion-content>
