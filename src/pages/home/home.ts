@@ -16,25 +16,21 @@ export class HomePage {
   }
 
 scan(){
-	/*this.barcodeScanner.scan().then(barcodeData => {
+	this.barcodeScanner.scan().then(barcodeData => {
 	 console.log('Barcode data', barcodeData);
+     this.AP.searchQrCode(barcodeData).subscribe(
+       (data) => {
+         console.log(data),
+         this.goToProfileDog(data);
 
-
-	 if(barcodeData.text == "id87456231"){
-	 }
+       },
+       (error) =>{  this.mostrar_mensaje(error.error.text)}
+       );
 	}).catch(err => {
 	    console.log('Error', err);
 	});
-*/
-	let qrcode = "id87456231";
-	 	this.AP.searchQrCode(qrcode).subscribe(
-       (data) => {
-       	console.log(data),
-       	this.goToProfileDog(data);
 
-       },
-       (error) =>{	this.mostrar_mensaje(error.error.text)}
-       );
+	
 }
 
 mostrar_mensaje(mensaje){
