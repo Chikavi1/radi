@@ -30,7 +30,7 @@ export class MyApp {
       { title: 'Inicio', component: HomePage },
       { title: 'Hacer una denuncia', component: ComplaintsPage },
       { title: 'eventos' , component: EventsPage },
-      { title: 'Donaciones', component: DonationsPage },
+      //{ title: 'Donaciones', component: DonationsPage },
       { title: 'Informacion', component: InfoPage }
     ];
 

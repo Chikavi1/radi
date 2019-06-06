@@ -1,5 +1,5 @@
-<ion-header>
-  <ion-navbar>
+<ion-header no-border>
+  <ion-navbar color="home">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
@@ -7,22 +7,22 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content>
-  <form [formGroup]="myForm" (ngSubmit)="saveData()">
-	  <ion-item>
+<ion-content class="fondo">
+  <form [formGroup]="myForm" (ngSubmit)="saveData()" >
+	  <ion-item class=" margin-top fondo" >
 	    <ion-label floating>Nombre</ion-label>
-	    <ion-input type="text" formControlName="nombre" ></ion-input>
+	    <ion-input type="text" formControlName="nombre" style="padding-right: 1em !important;" ></ion-input>
 	  </ion-item>
 
-	  <ion-item>
+	  <ion-item class="fondo" >
 	    <ion-label floating>telefono</ion-label>
 	    <ion-input type="cellphone" formControlName="telefono" ></ion-input>
 	  </ion-item>
 
 	  <p text-center>¿puedes describir el acto que viste?</p>
-		<ion-item>
+		<ion-item class="fondo">
 		  <ion-textarea formControlName="description" ></ion-textarea>
 		</ion-item>
-		<button ion-button block type="submit" [disabled]="!myForm.valid">Enviar Reporte</button>
+		<button ion-button block type="submit" [disabled]="!myForm.valid" class="margin-top">Enviar Reporte</button>
 	</form>
 </ion-content>

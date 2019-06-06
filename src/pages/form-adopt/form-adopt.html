@@ -1,13 +1,11 @@
-<ion-header>
+<ion-header no-border>
   <ion-navbar>
     <ion-title>Formulario de Adopción</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content >
-  <p text-center>Porfavor contesta el siguiente formulario</p>
-  <form [formGroup]="myForm" (ngSubmit)="saveData()">
-  <ion-list>
+  <form [formGroup]="myForm" (ngSubmit)="saveData()" style="padding: 2em;">
     <ion-item>
       <ion-label floating>Nombre</ion-label>
       <ion-input type="text" formControlName="nombre" ></ion-input>
@@ -59,10 +57,11 @@
       <ion-textarea formControlName="medidas" ></ion-textarea>
     </ion-item>
 
-  </ion-list>
   
   <div text-center>
+    <br>
     <a (click)="alert()" >Terminos y condiciones</a><br>
+    <br>
   </div>
 
   <button ion-button block secondary type="submit" [disabled]="!myForm.valid" >
