@@ -10,28 +10,30 @@ import { ApiProvider } from '../../providers/api/api';
 })
 export class HomePage {
 
+    data = "";
   constructor(public navCtrl: NavController,private barcodeScanner: BarcodeScanner,
     public AP:ApiProvider,public ToastCtrl:ToastController) {
 
   }
 
 scan(){
+
   this.barcodeScanner.scan().then(barcodeData => {
-   console.log('Barcode data', barcodeData);
+   if(barcodeData.text != ""){
      this.AP.searchQrCode(barcodeData.text).subscribe(
        (data) => {
-         console.log(data),
          this.goToProfileDog(data);
-
        },
        (error) =>{  this.mostrar_mensaje(error.error.text)}
        );
+   }
   }).catch(err => {
-      console.log('Error', err);
   });
 
   
 }
+
+
 
 mostrar_mensaje(mensaje){
   

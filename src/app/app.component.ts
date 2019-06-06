@@ -8,8 +8,6 @@ import { ComplaintsPage } from '../pages/complaints/complaints';
 import { DonationsPage } from '../pages/donations/donations';
 import { EventsPage } from '../pages/events/events';
 import { InfoPage } from '../pages/info/info';
-import { FormAdoptPage } from '../pages/form-adopt/form-adopt';
-import { DogProfilePage } from '../pages/dog-profile/dog-profile';
 
 import { timer } from 'rxjs/observable/timer';
 @Component({
