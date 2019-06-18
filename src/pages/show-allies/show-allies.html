@@ -1,0 +1,57 @@
+
+<ion-header no-border>
+
+  <ion-navbar color="home">
+    <ion-title>{{datos.nombre}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+<ion-card>
+		 <img src="https://www.chikavi.com/{{datos.imagen}}"/>
+	</ion-card>
+
+	<h2 text-center>{{ datos.nombre }}</h2>
+	
+	<ion-grid id="sectionInfo" >
+		<ion-row>
+			
+			<ion-col text-center>
+				<p>Domicilio</p>
+				<p>{{datos.domicilio}}</p>
+			</ion-col>
+		</ion-row>
+		<ion-row >
+		<ion-col text-center>
+
+				<p class="clave">telefono</p>
+				<p>{{datos.telefono }}</p>
+				<p class="clave">horario </p>
+				<p>{{datos.horario}}</p>
+			</ion-col>
+
+			<ion-col text-center>
+				<p class="clave">telefono</p>
+				<p>{{datos.telefono}}</p>
+				<p class="clave">mvz</p>
+				<p>{{datos.personal}}</p>
+
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+
+	<ion-grid id="description">
+		<ion-row>
+			<ion-col text-center>
+				<h5>Redes</h5>
+				 <ion-card-content [innerHTML]="datos.redes">
+  				 </ion-card-content>
+				<h5>Promociones</h5>
+				 <ion-card-content [innerHTML]="datos.promociones">
+  				 </ion-card-content>
+			</ion-col>
+		</ion-row>
+	</ion-grid>	
+</ion-content>
