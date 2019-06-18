@@ -44,9 +44,15 @@ export class ApiProvider {
 					"&telefono="+telefono+
 					"&description="+description);
 		}
-
+	getAllies():any{
+		return this.http.get(this.baseUrl+"alies");
+	}
 	getEvents():any{
 		return this.http.get(this.baseUrl+"events");
+	  }
+
+	  getEventsFinished():any{
+		return this.http.get(this.baseUrl+"eventsFinished");
 	  }
 
 	 searchQrCode(qrcode):any{
