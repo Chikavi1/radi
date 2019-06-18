@@ -18,11 +18,11 @@ import { EventsPage } from '../pages/events/events';
 import { InfoPage } from '../pages/info/info';
 import { SecondaryPage } from '../pages/secondary/secondary';
 import { SecondaryPageInfoPage } from '../pages/secondary-page-info/secondary-page-info';
-
+import { AliadosPage } from '../pages/aliados/aliados';
 import { TerminosPage } from '../pages/terminos/terminos';
 import { FinishFormAdoptPage } from '../pages/finish-form-adopt/finish-form-adopt';
+import { ShowAlliesPage } from '../pages/show-allies/show-allies';
 import { HttpClientModule } from '@angular/common/http';
-
 
 import { LOCALE_ID } from '@angular/core';
 import localeEs from '@angular/common/locales/es';
@@ -46,15 +46,17 @@ registerLocaleData(localeEs);
     FinishFormAdoptPage,
     ComplaintsPage,
     SecondaryPage,
-    SecondaryPageInfoPage
+    SecondaryPageInfoPage,
+    AliadosPage,
+    ShowAlliesPage
 
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    IonicModule.forRoot(MyApp,{
-        backButtonText: 'Atras'
-    }),
+     IonicModule.forRoot(MyApp)
+
+          
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -71,7 +73,9 @@ registerLocaleData(localeEs);
     FinishFormAdoptPage,
     ComplaintsPage,
     SecondaryPage,
-    SecondaryPageInfoPage
+    SecondaryPageInfoPage,
+    AliadosPage,
+    ShowAlliesPage
 
   ],
   providers: [

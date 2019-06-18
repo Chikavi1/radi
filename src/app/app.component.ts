@@ -8,7 +8,7 @@ import { ComplaintsPage } from '../pages/complaints/complaints';
 import { DonationsPage } from '../pages/donations/donations';
 import { EventsPage } from '../pages/events/events';
 import { InfoPage } from '../pages/info/info';
-
+import { AliadosPage } from '../pages/aliados/aliados';
 import { timer } from 'rxjs/observable/timer';
 @Component({
   templateUrl: 'app.html'
@@ -28,9 +28,10 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Inicio', component: HomePage },
-      { title: 'Hacer una denuncia', component: ComplaintsPage },
       { title: 'eventos' , component: EventsPage },
+      { title: 'Hacer una denuncia', component: ComplaintsPage },
       //{ title: 'Donaciones', component: DonationsPage },
+      { title: 'Aliados', component: AliadosPage },
       { title: 'Informacion', component: InfoPage }
     ];
 
