@@ -1,14 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the SecondaryPageInfoPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
-@IonicPage()
+import { NavController, NavParams } from 'ionic-angular';
 @Component({
   selector: 'page-secondary-page-info',
   templateUrl: 'secondary-page-info.html',
