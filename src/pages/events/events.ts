@@ -9,12 +9,23 @@ import { SecondaryPage } from '../secondary/secondary';
   templateUrl: 'events.html',
 })
 export class EventsPage {
+
+
+
 	events : any[];
+  eventsFinished : any[];
+
+  tipos;
   constructor(public navCtrl: NavController, public navParams: NavParams,public AP: ApiProvider) {
-  		this.AP.getEvents().subscribe(
+  		this.tipos = "proximos";
+      this.AP.getEvents().subscribe(
   			(data)  => {this.events = data,console.log(data)},
   			(error) => {console.log(error)}
   			);
+      this.AP.getEventsFinished().subscribe(
+        (data)  => {this.eventsFinished = data,console.log(data)},
+        (error) => {console.log(error)}
+        );
   }
   navOptions = {
 	animation: 'md-transition',
@@ -25,6 +36,15 @@ goToSecondary(data){
 	this.navCtrl.push(SecondaryPage,{datos : data},this.navOptions);
 }
 
+doRefresh(refresher) {
+    setTimeout(() => {
+       this.AP.getEvents().subscribe(
+       (data) => {this.events = data},
+       (error) =>{console.log(error)}
+       );
+            refresher.complete();
+    }, 2000);
+  }
 
 
 

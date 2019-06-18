@@ -18,7 +18,22 @@
 
 <ion-content padding>
 
-<ion-card *ngFor="let event of events" (click)="goToSecondary(event)">
+
+<div padding>
+  <ion-segment [(ngModel)]="tipos">
+    <ion-segment-button value="proximos">
+      Proximos
+    </ion-segment-button>
+    <ion-segment-button value="anteriores">
+      Anteriores
+    </ion-segment-button>
+  </ion-segment>
+</div>
+
+<div [ngSwitch]="tipos">
+  <ion-list *ngSwitchCase="'anteriores'">
+
+<ion-card *ngFor="let event of eventsFinished" (click)="goToSecondary(event)">
   <img src="https://www.chikavi.com/{{event.imagen}}"/>
   <ion-card-content>
     <ion-card-title>
@@ -30,5 +45,21 @@
   </ion-card-content>
 </ion-card>
 
+  </ion-list>
 
+  <ion-list *ngSwitchCase="'proximos'">
+    <ion-card *ngFor="let event of events" (click)="goToSecondary(event)">
+  <img src="https://www.chikavi.com/{{event.imagen}}"/>
+  <ion-card-content>
+    <ion-card-title>
+    {{event.titulo}}
+      </ion-card-title>
+    <p class="texr" >
+      ver mas...
+   </p>
+  </ion-card-content>
+</ion-card>
+
+  </ion-list>
+</div>
 </ion-content>
