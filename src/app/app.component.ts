@@ -4,11 +4,14 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
+import {HistoryPage} from '../pages/history/history';
+
 import { ComplaintsPage } from '../pages/complaints/complaints';
-import { DonationsPage } from '../pages/donations/donations';
 import { EventsPage } from '../pages/events/events';
 import { InfoPage } from '../pages/info/info';
 import { AliadosPage } from '../pages/aliados/aliados';
+//import { LoginPage } from '../pages/login/login';
+//import { DonationsPage } from '../pages/donations/donations';
 import { timer } from 'rxjs/observable/timer';
 @Component({
   templateUrl: 'app.html'
@@ -23,16 +26,19 @@ export class MyApp {
   pages: Array<{title: string, component: any}>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+
     this.initializeApp();
 
     // used for an example of ngFor and navigation
     this.pages = [
+     // { title: 'Iniciar sesion', component : LoginPage },
       { title: 'Inicio', component: HomePage },
-      { title: 'eventos' , component: EventsPage },
+      { title: 'Historial',component: HistoryPage },
+      { title: 'Eventos' , component: EventsPage },
       { title: 'Hacer una denuncia', component: ComplaintsPage },
       //{ title: 'Donaciones', component: DonationsPage },
       { title: 'Aliados', component: AliadosPage },
-      { title: 'Informacion', component: InfoPage }
+      { title: 'Información', component: InfoPage }
     ];
 
   }
@@ -41,10 +47,12 @@ export class MyApp {
     this.platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
-      this.statusBar.styleDefault();
+      //this.statusBar.styleDefault();
+
+      this.statusBar.backgroundColorByHexString("#17202F");
       this.splashScreen.hide();
 
-      timer(3000).subscribe(() => this.showSplash = false) 
+      timer(1000).subscribe(() => this.showSplash = false) 
     });
   }
 

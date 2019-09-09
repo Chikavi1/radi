@@ -16,14 +16,6 @@ export class DogProfilePage {
 	vaccinations:any = {};
 	dewormings:any = {};
 
-	nombre = "RADIADOR";
-	especie = "PERRO";
-	color = "CAFE";
-	raza = "CRIOLLO";
-	sexo = "MASCULINO"
-	senas = "Es un perro medio grande,tiene una patita mala y normalemente ladra mucho.";
-	notes = "Puede parecer que es un perro violento por que ladra pero su comportamiento es bueno,es muy jugador y suele dormir mucho."
-	adoptado = false;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public AP: ApiProvider) {
   	this.dog = this.navParams.get("dog");
@@ -37,7 +29,7 @@ export class DogProfilePage {
 
 
   	this.AP.getDewormings(this.dog.id).subscribe(
-  		(data) => {this.dewormings = data,console.log(data)},
+  		(data) => {this.dewormings = data},
   		(error) => {console.log(error)}
   		);
   }

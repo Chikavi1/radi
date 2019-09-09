@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {  NavController, NavParams } from 'ionic-angular';
 import { ModalController } from 'ionic-angular';
-
 import { TerminosPage } from '../terminos/terminos';
 import { FinishFormAdoptPage } from '../finish-form-adopt/finish-form-adopt';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ApiProvider } from '../../providers/api/api';
-@IonicPage()
+
 @Component({
   selector: 'page-form-adopt',
   templateUrl: 'form-adopt.html',

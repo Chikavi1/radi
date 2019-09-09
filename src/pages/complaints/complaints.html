@@ -3,24 +3,24 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Denuncia</ion-title>
+    <ion-title>Denuncias</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content class="fondo">
+<ion-content >
   <form [formGroup]="myForm" (ngSubmit)="saveData()" >
-	  <ion-item class=" margin-top fondo" >
+	  <ion-item class="margin-top" style="padding:0 2em;"  >
 	    <ion-label floating>Nombre</ion-label>
-	    <ion-input type="text" formControlName="nombre" style="padding-right: 1em !important;" ></ion-input>
+	    <ion-input type="text" formControlName="nombre" style="padding-left: 1em !important;" ></ion-input>
 	  </ion-item>
 
-	  <ion-item class="fondo" >
+	  <ion-item  style="padding:0 2em;">
 	    <ion-label floating>telefono</ion-label>
-	    <ion-input type="cellphone" formControlName="telefono" ></ion-input>
+	    <ion-input type="number" formControlName="telefono" ></ion-input>
 	  </ion-item>
 
 	  <p text-center>¿puedes describir el acto que viste?</p>
-		<ion-item class="fondo">
+		<ion-item  style="padding:0 2em;">
 		  <ion-textarea formControlName="description" ></ion-textarea>
 		</ion-item>
 		<button ion-button block type="submit" [disabled]="!myForm.valid" class="margin-top">Enviar Reporte</button>

@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {  NavController, NavParams } from 'ionic-angular';
 import { ApiProvider } from '../../providers/api/api';
 import { SecondaryPage } from '../secondary/secondary';
 
-@IonicPage()
 @Component({
   selector: 'page-events',
   templateUrl: 'events.html',

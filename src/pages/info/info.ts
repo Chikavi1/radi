@@ -27,7 +27,7 @@ export class InfoPage {
 		{
 			nombre : "Luis Rojas",
 			correo : "chikavi@hotmail.com",
-			numero : "33 2338 6175",
+			numero : "33 2727 6923",
 			cargo : "Desarrollador",
 			imagen : "https://scontent.fgdl3-1.fna.fbcdn.net/v/t1.0-9/11880370_1060231210661615_6500303982536795316_n.jpg?_nc_cat=104&_nc_ht=scontent.fgdl3-1.fna&oh=95e9aadf3e7c6bd3ab4d54c6adb6abdd&oe=5D903030"
 
@@ -37,7 +37,7 @@ export class InfoPage {
 			correo : "",
 			numero : "33 1998 0517",
 			cargo : "Admin Rescate perruno cut",
-			imagen : "https://scontent.fgdl3-1.fna.fbcdn.net/v/t1.0-1/61929161_10214764432650867_5551057338145701888_n.jpg?_nc_cat=108&_nc_ht=scontent.fgdl3-1.fna&oh=32ef11cc2e57ecf62328d4c615aae566&oe=5D58B6B3"
+			imagen : "https://scontent.fgdl3-1.fna.fbcdn.net/v/t1.0-9/61929161_10214764432650867_5551057338145701888_n.jpg?_nc_cat=108&_nc_oc=AQnQsInaxnDNPRQzrvRzLOE1X9vrW9aycwbLIH6wUiOICLlpXCCtjaaDUk26ZbaeqhM&_nc_ht=scontent.fgdl3-1.fna&oh=6c2f475fe46afd208f09d05a2e313260&oe=5E103E03"
 		}
 		]
 	}
