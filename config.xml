@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="io.chikavi.radiapp" version="1.0.5" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="io.chikavi.radiapp" version="1.0.6" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>RadiRCP</name>
     <description>una asombrosa app desarrollada por chikavi</description>
     <author email="chikavi@hotmail.com" href="http://chikavi.com/">Chikavi Team</author>
@@ -105,5 +105,5 @@
     <plugin name="cordova-sqlite-storage" spec="^3.3.0" />
     <plugin name="cordova-plugin-splashscreen" spec="https://github.com/goinnn/cordova-plugin-splashscreen.git#4.0.0#colors" />
     <engine name="ios" spec="4.5.5" />
-    <engine name="android" spec="7.0.0" />
+    <engine name="android" spec="7.1.4" />
 </widget>
