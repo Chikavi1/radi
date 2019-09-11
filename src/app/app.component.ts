@@ -10,6 +10,7 @@ import { ComplaintsPage } from '../pages/complaints/complaints';
 import { EventsPage } from '../pages/events/events';
 import { InfoPage } from '../pages/info/info';
 import { AliadosPage } from '../pages/aliados/aliados';
+import { AdoptPage } from '../pages/adopt/adopt';
 //import { LoginPage } from '../pages/login/login';
 //import { DonationsPage } from '../pages/donations/donations';
 import { timer } from 'rxjs/observable/timer';
@@ -34,6 +35,7 @@ export class MyApp {
      // { title: 'Iniciar sesion', component : LoginPage },
       { title: 'Inicio', component: HomePage },
       { title: 'Historial',component: HistoryPage },
+      //{ title: 'Adoptar',component: AdoptPage },
       { title: 'Eventos' , component: EventsPage },
       { title: 'Hacer una denuncia', component: ComplaintsPage },
       //{ title: 'Donaciones', component: DonationsPage },

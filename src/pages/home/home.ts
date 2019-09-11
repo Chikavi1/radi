@@ -23,30 +23,33 @@ export class HomePage {
   }
 
 scan(){
-  this.options = {
-        prompt : "Coloque un código QR en el interior del rectángulo del visor para escanear.",
-        resultDisplayDuration : 0
-    }
 
-      this.barcodeScanner.scan(this.options).then(barcodeData => {
-      if (barcodeData.cancelled == true) {
-       this.navCtrl.push(ErrorPage);
-        }
+   this._historial.agregar_historial("128313");
 
-       if(barcodeData.text != ""){
-         if(barcodeData.text.startsWith("RD")){
-          this._historial.agregar_historial(barcodeData.text);
-        }
-         this.AP.searchQrCode(barcodeData.text).subscribe(
-           (data) => {
-             this.goToProfileDog(data);
-           },
-           (error) =>{
-           }
-           );
-       }
-      }).catch(err => {
-      });
+  // this.options = {
+  //       prompt : "Coloque un código QR en el interior del rectángulo del visor para escanear.",
+  //       resultDisplayDuration : 0
+  //   }
+
+  //     this.barcodeScanner.scan(this.options).then(barcodeData => {
+  //     if (barcodeData.cancelled == true) {
+  //      this.navCtrl.push(ErrorPage);
+  //       }
+
+  //      if(barcodeData.text != ""){
+  //        if(barcodeData.text.startsWith("RD")){
+  //         this._historial.agregar_historial(barcodeData.text);
+  //       }
+  //        this.AP.searchQrCode(barcodeData.text).subscribe(
+  //          (data) => {
+  //            this.goToProfileDog(data);
+  //          },
+  //          (error) =>{
+  //          }
+  //          );
+  //      }
+  //     }).catch(err => {
+  //     });
 
   
 }

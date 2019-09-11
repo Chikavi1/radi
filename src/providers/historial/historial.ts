@@ -21,12 +21,15 @@ objeto:any[] = [];
 
   	let DB = (localStorage.getItem("datos"))? JSON.parse(localStorage.getItem("datos")):[];
   	for(let item of DB){
-  		if( item == codigoPR){
+  		if( item.codigo == codigoPR){
   			this.mostrar_mensaje("El perro ya estaba agregado a tu historial.");
   			return;
   		}
   	}
-  	DB.push(codigoPR);
+    var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric',hour:'numeric',minute:'numeric' };
+    var today  = new Date();
+
+  	DB.push({"codigo" : codigoPR , "fecha" : today.toLocaleDateString("es-ES", options)});
   	localStorage.setItem("datos",JSON.stringify(DB));
 
   	this.mostrar_mensaje("Se agrego el perro a tu historial.");
@@ -34,7 +37,7 @@ objeto:any[] = [];
 
   eliminar_historial(){
   	this.objeto = [];
-  	localStorage.clear();
+  	window.localStorage.removeItem('datos');
   }
   cargar_historial(){
     return this.objeto;

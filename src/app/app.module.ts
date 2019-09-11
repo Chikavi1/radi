@@ -26,6 +26,7 @@ import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
 import { InstructionsPage } from '../pages/instructions/instructions';
 import {ErrorPage} from '../pages/error/error';
+import {AdoptPage} from '../pages/adopt/adopt';
 
 import { IonicStorageModule } from '@ionic/storage';
 
@@ -64,7 +65,8 @@ registerLocaleData(localeEs);
     LoginPage,
     HistoryPage,
     InstructionsPage,
-    ErrorPage
+    ErrorPage,
+    AdoptPage
 
   ],
   imports: [
@@ -98,7 +100,8 @@ registerLocaleData(localeEs);
     LoginPage,
     HistoryPage,
     InstructionsPage,
-    ErrorPage
+    ErrorPage,
+    AdoptPage
 
   ],
   providers: [

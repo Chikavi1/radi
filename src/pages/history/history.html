@@ -38,7 +38,8 @@
 			<ion-list inset>
 			    <ion-item *ngFor="let data of historial; let i = index"
 			            (click)="abrir_scan( data )" style="background: #eee; border-left: 6px solid #C8CACC ;padding: .2em;">
-			      <p style="font-weight: bold;">{{ data }}</p>
+			      <p style="font-weight: bold;">{{ data.fecha }}</p>
+            <p>{{data.codigo}}</p>
 			    </ion-item>
 			</ion-list>
 	</div>

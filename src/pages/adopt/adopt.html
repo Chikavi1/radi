@@ -1,0 +1,37 @@
+<!--
+  Generated template for the AdoptPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header no-border>
+
+  <ion-navbar color="home">
+  	<button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Adoptar</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+	<ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+<p text-center>Los siguientes perros se puede adoptar</p>
+<ion-card>
+  <img src="https://www.chikavi.com/storage/ibwUQkmsYiKqoP47dYLcXsxHrar5JBc9HmMdvimC.jpeg"/>
+  <ion-card-content>
+    <ion-card-title>
+    perro name
+      </ion-card-title>
+   <button ion-button outline item-end icon-start>
+      <ion-icon name="heart"></ion-icon>
+      Me encariñe
+    </button>
+  </ion-card-content>
+</ion-card>
+</ion-content>
