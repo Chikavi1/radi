@@ -1,16 +1,15 @@
-<ion-header>
-  <ion-navbar color="titlename" >
-    <ion-title center>{{dog.nombre}}</ion-title>
+<ion-header translucent="true" no-border>
+  <ion-navbar color=‘light’ transparent hide-nav-bar="true">
+    	
+    <ion-title> </ion-title>
   </ion-navbar>
 </ion-header>
 
 
-<ion-content>
-	<ion-card>
-		 <img src="https://www.chikavi.com/{{dog.imagen}}"/>
-	</ion-card>
-
-	<ion-grid id="sectionInfo" >
+<ion-content fullscreen>
+<img src="https://www.chikavi.com/{{dog.imagen}}" style="position: relative;top:-4.5em;max-height: auto;" alt="">
+	<ion-grid id="sectionInfo" style="margin-top:-5em;" >
+	<h2 text-center>{{ dog.nombre }}</h2>
 		<ion-row >
 			<ion-col text-center>
 				<p class="clave">Especie: </p>
@@ -22,7 +21,7 @@
 			<ion-col text-center>
 				<p class="clave">Raza:</p>
 				<p>{{dog.raza}}</p>
-				<p class="clave">sexo:</p>
+				<p class="clave">Sexo:</p>
 				<p>{{dog.sexo}}</p>
 
 			</ion-col>
