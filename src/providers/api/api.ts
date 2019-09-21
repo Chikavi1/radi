@@ -6,12 +6,12 @@ import { Observable } from 'rxjs';
 @Injectable()
 export class ApiProvider {
 	baseUrl:string = "https://www.chikavi.com/api/";
-
+	baseUrlLocal:string = "http://127.0.0.1:8000/api/";
 	  constructor(public http: HttpClient) {
 
 	  }
 
-	  solicitud(data): Observable <any> {
+	  solicitud(data,id):Observable <any> {
 	    let nombre = data.nombre;
 	  	let telefono = data.telefono;
 	    let vivienda = data.vivienda;
@@ -19,7 +19,9 @@ export class ApiProvider {
 	    let adopcion = data.adopcion;
 	    let de_acuerdo = data.de_acuerdo;
 	    let medidas = data.medidas;
-		  
+	    console.log("-------");
+	    console.log(id);
+	    console.log("----------");
 		return  this.http.get(
 		    	this.baseUrl+
 		    	"create_request?"+
@@ -29,7 +31,8 @@ export class ApiProvider {
 		    	"&dormira="+dormir+
 		    	"&adoptado_anterior="+adopcion+
 		    	"&acuerdo="+de_acuerdo+
-		    	"&medidas="+medidas);
+		    	"&medidas="+medidas+
+				"&dog_id="+id);
 
 		 }
 
@@ -67,5 +70,10 @@ export class ApiProvider {
 	 getDewormings(id):any{
 	 	return this.http.get(this.baseUrl+"getDewormings?id="+id);
 	 }
-
+	  getStatus(status){
+	  	return this.http.get(this.baseUrl+"getStatus?name="+status);
+	  }
+	  getCases(){
+	  	return this.http.get(this.baseUrl+"getCases");
+	  }
 	}
