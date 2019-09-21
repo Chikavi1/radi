@@ -11,6 +11,9 @@ import { EventsPage } from '../pages/events/events';
 import { InfoPage } from '../pages/info/info';
 import { AliadosPage } from '../pages/aliados/aliados';
 import { AdoptPage } from '../pages/adopt/adopt';
+import { SuccessStoriesPage } from '../pages/success-stories/success-stories';
+import { FeedPage } from '../pages/feed/feed';
+
 //import { LoginPage } from '../pages/login/login';
 //import { DonationsPage } from '../pages/donations/donations';
 import { timer } from 'rxjs/observable/timer';
@@ -34,9 +37,11 @@ export class MyApp {
     this.pages = [
      // { title: 'Iniciar sesion', component : LoginPage },
       { title: 'Inicio', component: HomePage },
+     // { title: '¡Alimenta a un perro!',component: FeedPage  },
       { title: 'Historial',component: HistoryPage },
-      //{ title: 'Adoptar',component: AdoptPage },
+      { title: 'Adoptar',component: AdoptPage },
       { title: 'Eventos' , component: EventsPage },
+      { title: 'Casos de Exito',component: SuccessStoriesPage  },
       { title: 'Hacer una denuncia', component: ComplaintsPage },
       //{ title: 'Donaciones', component: DonationsPage },
       { title: 'Aliados', component: AliadosPage },
