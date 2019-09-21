@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="io.chikavi.radiapp" version="1.0.6" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>RadiRCP</name>
+<widget id="io.chikavi.radiapp" version="1.0.7" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>RadiRPC</name>
     <description>una asombrosa app desarrollada por chikavi</description>
     <author email="chikavi@hotmail.com" href="http://chikavi.com/">Chikavi Team</author>
     <content src="index.html" />
