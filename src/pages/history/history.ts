@@ -39,7 +39,6 @@ activo:boolean;
   }
 
   abrir_scan(codigo:string){
-  	console.log(codigo);
   	this.AP.searchQrCode(codigo).subscribe(
        (data) => {
          this.goToProfileDog(data);

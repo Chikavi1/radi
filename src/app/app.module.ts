@@ -27,10 +27,10 @@ import { RegisterPage } from '../pages/register/register';
 import { InstructionsPage } from '../pages/instructions/instructions';
 import {ErrorPage} from '../pages/error/error';
 import {AdoptPage} from '../pages/adopt/adopt';
+import { SuccessStoriesPage } from '../pages/success-stories/success-stories';
+import { FeedPage } from '../pages/feed/feed';
 
 import { IonicStorageModule } from '@ionic/storage';
-
-
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { HttpClientModule } from '@angular/common/http';
 import { LOCALE_ID } from '@angular/core';
@@ -66,7 +66,9 @@ registerLocaleData(localeEs);
     HistoryPage,
     InstructionsPage,
     ErrorPage,
-    AdoptPage
+    AdoptPage,
+    SuccessStoriesPage,
+    FeedPage
 
   ],
   imports: [
@@ -101,7 +103,9 @@ registerLocaleData(localeEs);
     HistoryPage,
     InstructionsPage,
     ErrorPage,
-    AdoptPage
+    AdoptPage,
+    SuccessStoriesPage,
+    FeedPage
 
   ],
   providers: [
