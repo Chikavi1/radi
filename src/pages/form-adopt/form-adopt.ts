@@ -12,10 +12,11 @@ import { ApiProvider } from '../../providers/api/api';
 })
 export class FormAdoptPage {
  myForm: FormGroup;
-
+  id;
   constructor(public navCtrl: NavController, public navParams: NavParams,
     public modalCtrl: ModalController,public formBuilder: FormBuilder, public Api: ApiProvider) {
      this.myForm = this.createMyForm();
+     this.id = this.navParams.get("idperro")
   }
 
   private createMyForm(){
@@ -34,7 +35,8 @@ export class FormAdoptPage {
   saveData(){
 
     console.log(this.myForm.value);
-    this.Api.solicitud(this.myForm.value).subscribe(response  => console.log(response));
+    console.log(this.id);
+     this.Api.solicitud(this.myForm.value,this.id).subscribe(response  => console.log(response));
     this.goToFinish();
   }
 

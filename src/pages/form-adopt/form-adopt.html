@@ -1,10 +1,11 @@
 <ion-header no-border>
-  <ion-navbar>
+  <ion-navbar color="home">
     <ion-title>Formulario de Adopción</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content >
+  <p text-center>Por favor contestar si en verdad estas interesado.</p>
   <form [formGroup]="myForm" (ngSubmit)="saveData()" style="padding: 2em;">
     <ion-item>
       <ion-label floating>Nombre</ion-label>
