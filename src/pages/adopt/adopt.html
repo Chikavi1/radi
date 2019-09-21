@@ -21,17 +21,45 @@
 	<ion-refresher (ionRefresh)="doRefresh($event)">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
-<p text-center>Los siguientes perros se puede adoptar</p>
-<ion-card>
-  <img src="https://www.chikavi.com/storage/ibwUQkmsYiKqoP47dYLcXsxHrar5JBc9HmMdvimC.jpeg"/>
+<p text-center><strong>Los siguientes perros estan en adopción</strong></p>
+
+<ion-card *ngFor="let dog of dogs" >
+  <img src="https://www.chikavi.com/{{dog.imagen}}" (click)="perfil_perro( dog.qr_code )"/>
   <ion-card-content>
     <ion-card-title>
-    perro name
+   <h1 text-center>{{dog.nombre}}	</h1>
       </ion-card-title>
-   <button ion-button outline item-end icon-start>
-      <ion-icon name="heart"></ion-icon>
-      Me encariñe
-    </button>
+
+      <ion-row>
+        <ion-col text-center>
+          <ion-icon name="color-palette" style="zoom:2.0;color:#F9564F;" ></ion-icon>
+          <h4 style="font-weight: bold;"> {{dog.color}}</h4>
+        </ion-col>
+        <ion-col text-center>
+          <ion-icon name="paw" style="zoom:2.0;color:#FF9F1C;"></ion-icon>
+          <h4 style="font-weight: bold;">{{dog.raza}}</h4>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+      	<ion-col text-center>
+          <ion-icon ios="ios-pin" md="md-pin" style="zoom:2.0;color:green;"></ion-icon>
+          <h4 style="font-weight: bold;">{{dog.place}}</h4>
+        </ion-col>
+      </ion-row>
+
+		<ion-row>
+			<ion-col>
+		    <button ion-button outline round item-end icon-start block (click)="iraformulario(dog.id)">
+		      <ion-icon name="heart"></ion-icon>
+	  	    Adoptar
+	    	</button>
+			</ion-col>
+			<ion-col>
+		    <a style="color:green" ion-button round outline  block color="green"  href="https://api.whatsapp.com/send?phone=52133 1998 0517	&text=hola,quisiera%20poder%20adoptar%20a%20{{dog.nombre}}" class="btn color-cut"><ion-icon name="logo-whatsapp"></ion-icon> &nbsp;Mensaje</a>
+			</ion-col>
+		</ion-row>
+ 
   </ion-card-content>
 </ion-card>
+
 </ion-content>
