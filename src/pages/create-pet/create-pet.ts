@@ -37,7 +37,9 @@ export class CreatePetPage {
 mostrar_camara(){
 	const options: CameraOptions = {
 	  quality: 70,
-	  destinationType: this.camera.DestinationType.FILE_URI,
+	  destinationType: this.camera.DestinationType.DATA_URL,
+	  correctOrientation: true,
+	  targetWidth: 720,
 	  encodingType: this.camera.EncodingType.JPEG,
 	  mediaType: this.camera.MediaType.PICTURE
 	}
