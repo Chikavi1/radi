@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { Http,Headers, } from '@angular/http';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
@@ -18,60 +18,30 @@ export class AuthServiceProvider {
   static readonly REGISTER_URL = 'http://contoh.dev/api/register';
   access: boolean;
   token: string;
+  baseUrlLocal:string = "http://127.0.0.1:8000/api/";
 
   constructor(public http: Http) {}
 
   // Login
-  public login(credentials) {
-    if (credentials.email === null || credentials.password === null) {
-      return Observable.throw("Please insert credentials.");
-    } else {
-      return Observable.create(observer => {
+  loginlaravel(email,password):any{
+    let headers = new Headers();
+      headers.append('Content-Type','application/x-www-form-urlencoded');
+      headers.append('X-Requested-With', 'XMLHttpRequest');
 
-        this.http.post(AuthServiceProvider.LOGIN_URL, credentials)
-        .map(res => res.json())
-        .subscribe( data => {
-          if (data.access_token) {
-            this.token = 'Bearer ' + data.access_token;
-            this.access = true;
-          } else {
-            this.access = false;
-          }
-        });
+     return this.http.get(this.baseUrlLocal+"login?"+"email="+email+"&password="+password,{headers: headers});
+  }
+  getUser(id):any{
 
-        setTimeout(() => {
-              observer.next(this.access);
-          }, 500);
-
-        setTimeout(() => {
-              observer.complete();
-          }, 1000);
-
-
-      }, err => console.error(err));
-    }
+     let headers = new Headers();
+      headers.append('Content-Type','application/x-www-form-urlencoded');
+      headers.append('Authorization', 'Bearer '+ localStorage.getItem("token"));
+    return this.http.get(this.baseUrlLocal+"user?user="+id,{headers: headers});
   }
 
-  // Register
-  public register(credentials) {
-    if (credentials.name === null || credentials.email === null || credentials.password === null) {
-      return Observable.throw("Please insert credentials");
-    } else {
-      return Observable.create(observer => {
-
-        this.http.post(AuthServiceProvider.REGISTER_URL, credentials)
-        .map(res => res.json())
-        .subscribe( data => {
-          console.log(data);
-        });
-
-        observer.next(true);
-        observer.complete();
-      });
-    }
+  create_user(name,email,psw,c_pws){
+   return this.http.get(this.baseUrlLocal+"signup?name="+name+"&email="+email+"&password="+psw+"&password_confirmation="+c_pws);
   }
-
-  // Get Token
+  
   public getToken() {
     return this.token;
   }

@@ -6,6 +6,9 @@ import { InstructionsPage } from '../instructions/instructions';
 import { ApiProvider } from '../../providers/api/api';
 import { HistorialProvider } from '../../providers/historial/historial';
 import {ErrorPage} from '../error/error';
+import {ProfilePage} from '../profile/profile';
+
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -22,9 +25,13 @@ export class HomePage {
 
   }
 
+goProfile(){
+     let profileModal = this.modal.create(ProfilePage);
+     profileModal.present();
+}
+
+
 scan(){
-
-
   this.options = {
         prompt : "Coloque un código QR en el interior del rectángulo del visor para escanear.",
         resultDisplayDuration : 0

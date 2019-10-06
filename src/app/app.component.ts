@@ -13,8 +13,9 @@ import { AliadosPage } from '../pages/aliados/aliados';
 import { AdoptPage } from '../pages/adopt/adopt';
 import { SuccessStoriesPage } from '../pages/success-stories/success-stories';
 import { FeedPage } from '../pages/feed/feed';
+import { CreatePetPage } from '../pages/create-pet/create-pet';
 
-//import { LoginPage } from '../pages/login/login';
+import { ProfilePage } from '../pages/profile/profile';
 //import { DonationsPage } from '../pages/donations/donations';
 import { timer } from 'rxjs/observable/timer';
 @Component({
@@ -35,8 +36,8 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-     // { title: 'Iniciar sesion', component : LoginPage },
       { title: 'Inicio', component: HomePage },
+      { title: 'crear', component: CreatePetPage },
      // { title: '¡Alimenta a un perro!',component: FeedPage  },
       { title: 'Historial',component: HistoryPage },
       { title: 'Adoptar',component: AdoptPage },

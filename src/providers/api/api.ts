@@ -10,7 +10,9 @@ export class ApiProvider {
 	  constructor(public http: HttpClient) {
 
 	  }
-
+	  getDogs(id){
+	  	return this.http.get(this.baseUrlLocal+"getDogs?user_id="+id);
+	  }
 	  solicitud(data,id):Observable <any> {
 	    let nombre = data.nombre;
 	  	let telefono = data.telefono;

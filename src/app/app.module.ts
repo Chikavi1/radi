@@ -29,6 +29,9 @@ import {ErrorPage} from '../pages/error/error';
 import {AdoptPage} from '../pages/adopt/adopt';
 import { SuccessStoriesPage } from '../pages/success-stories/success-stories';
 import { FeedPage } from '../pages/feed/feed';
+import {ProfilePage} from '../pages/profile/profile';
+import {CreatePetPage} from '../pages/create-pet/create-pet';
+
 
 import { IonicStorageModule } from '@ionic/storage';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
@@ -40,6 +43,8 @@ import { ApiProvider } from '../providers/api/api';
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 import { HttpModule } from '@angular/http';
 import { HistorialProvider } from '../providers/historial/historial';
+
+import { Camera } from '@ionic-native/camera';
 registerLocaleData(localeEs);
 
 
@@ -68,7 +73,9 @@ registerLocaleData(localeEs);
     ErrorPage,
     AdoptPage,
     SuccessStoriesPage,
-    FeedPage
+    FeedPage,
+    CreatePetPage,
+    ProfilePage
 
   ],
   imports: [
@@ -105,7 +112,9 @@ registerLocaleData(localeEs);
     ErrorPage,
     AdoptPage,
     SuccessStoriesPage,
-    FeedPage
+    FeedPage,
+    CreatePetPage,
+    ProfilePage
 
   ],
   providers: [
@@ -116,7 +125,8 @@ registerLocaleData(localeEs);
      {provide: LOCALE_ID, useValue:"es" },
     ApiProvider,
     AuthServiceProvider,
-    HistorialProvider
+    HistorialProvider,
+    Camera
   ]
 })
 export class AppModule {}

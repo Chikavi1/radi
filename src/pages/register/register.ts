@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, AlertController } from 'ionic-angular';
+import { IonicPage, NavController, AlertController,ModalController, ViewController } from 'ionic-angular';
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
+import { ProfilePage } from '../profile/profile';
 
 /**
  * Generated class for the RegisterPage page.
@@ -18,47 +19,40 @@ export class RegisterPage {
 
   createSuccess = false;
   registerCredentials = { name: '', email: '', password: '', confirmation_password: '' };
-
+  name:any;
+  email:any;
+  password:any;
+  confirmation_password:any;
   constructor(
     private nav: NavController,
     private auth: AuthServiceProvider,
-    private alertCtrl: AlertController
-  ) {}
+    private alertCtrl: AlertController,
+    public  viewCtrl: ViewController,
+    public modalCtrl: ModalController
+  ) {
 
-  public register() {
-    if (this.registerCredentials.password != this.registerCredentials.confirmation_password) {
-      this.showPopup("Error", 'The password confirmation does not match.');
-    } else {
-      this.auth.register(this.registerCredentials).subscribe(success => {
-        if (success) {
-          this.createSuccess = true;
-          this.showPopup("Felicidades", "Tu cuenta ha sido creada.");
-        } else {
-          this.showPopup("Error", "Problem creating account.");
-        }
-      },
-        error => {
-          this.showPopup("Error", error);
-        });
-    }
+
   }
 
-  showPopup(title, text) {
-    let alert = this.alertCtrl.create({
-      title: title,
-      subTitle: text,
-      buttons: [
-        {
-          text: 'OK',
-          handler: data => {
-            if (this.createSuccess) {
-              this.nav.popToRoot();
-            }
-          }
-        }
-      ]
-    });
-    alert.present();
+  register(){
+   
+
+  this.auth.create_user(this.name,this.email,this.password,this.confirmation_password)
+           .subscribe(
+             (data)=>{
+              this.auth.loginlaravel(this.email,this.password).subscribe((data)=>{
+                  let usuario = data.json();
+                  localStorage.setItem("user",usuario.user.id);
+                  localStorage.setItem("token",usuario.access_token);
+                   this.viewCtrl.dismiss();
+                   let profileModal = this.modalCtrl.create(ProfilePage);
+                   profileModal.present();
+              });
+            });
   }
+closeModal(){
+     this.viewCtrl.dismiss();
+   }
+ 
 
 }

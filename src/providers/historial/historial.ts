@@ -14,7 +14,6 @@ objeto:any[] = [];
  misdatos:any[] = [];
 
   constructor(private platform: Platform,public ToastCtrl:ToastController) {
-    console.log('Hello HistorialProvider Provider');
   }
 
   agregar_historial(codigoPR:string){

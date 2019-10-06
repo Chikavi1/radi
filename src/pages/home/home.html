@@ -1,16 +1,34 @@
 <ion-header no-border>
   <ion-navbar color="home">
-    <button ion-button menuToggle>
-      <ion-icon name="menu" style="color:#FFEB3B;"></ion-icon>
-    </button>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+           <button ion-button menuToggle >
+          <ion-icon name="menu" style="color:#FFEB3B;"></ion-icon>
+          </button>
+        </ion-col>
+        <ion-col>
+          <ion-buttons>
+            <button ion-button icon-only (click)="goProfile()" float-end >
+              <ion-icon name="contact" style="color:#FFEB3B;"></ion-icon>
+            </button>
+          </ion-buttons>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </ion-navbar>
 </ion-header>
+
+
+
+
+
 
 <ion-content padding class="vertical-align-content">
 	<div class="caca">
 		
  <h1 text-center style="color:white;" >Encuentra a un perrito</h1><br>
-  <button ion-button block secondary (click)="scan()" >Escanear</button>
+  <button ion-button block secondary round (click)="scan()" >Escanear</button>
 	<p text-center style="color:white;" (click)="instructions()">¿Cómo funciona?</p>
 		</div>
 </ion-content>

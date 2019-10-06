@@ -1,32 +1,38 @@
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>register</ion-title>
+  <ion-navbar color="home" no-border>
+    <ion-buttons>
+      <button ion-button 
+          (click)="closeModal()">
+        Cerrar      
+      </button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+  <h1 text-center>Registrar cuenta</h1>
   <form (ngSubmit)="register()" #registerForm="ngForm">
       <ion-row>
         <ion-col>
           <ion-list inset>
 
             <ion-item>
-              <ion-input type="text" placeholder="Name" name="name" [(ngModel)]="registerCredentials.name" required></ion-input>
+              <ion-input type="text" placeholder="Nombre" name="name" [(ngModel)]="name" required></ion-input>
             </ion-item>
 
             <ion-item>
-              <ion-input type="text" placeholder="Email" name="email" [(ngModel)]="registerCredentials.email" required></ion-input>
+              <ion-input type="text" placeholder="Correo electronico" name="email" [(ngModel)]="email" required></ion-input>
             </ion-item>
 
             <ion-item>
-              <ion-input type="password" placeholder="Password" name="password" [(ngModel)]="registerCredentials.password" required></ion-input>
+              <ion-input type="password" placeholder="Contraseña" name="password" [(ngModel)]="password" required></ion-input>
             </ion-item>
 
             <ion-item>
-              <ion-input type="password" placeholder="Confirm Password" name="confirmation_password" [(ngModel)]="registerCredentials.confirmation_password" required></ion-input>
+              <ion-input type="password" placeholder="Confirmar contraseña" name="confirmation_password" [(ngModel)]="confirmation_password" required></ion-input>
             </ion-item>
 
           </ion-list>
@@ -35,7 +41,7 @@
 
       <ion-row>
         <ion-col class="signup-col">
-          <button ion-button class="submit-btn" full type="submit" [disabled]="!registerForm.form.valid">Register</button>
+          <button ion-button class="submit-btn" full type="submit" [disabled]="!registerForm.form.valid">Registrar</button>
         </ion-col>
       </ion-row>
 
