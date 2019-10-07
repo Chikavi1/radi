@@ -45,6 +45,8 @@ import { HttpModule } from '@angular/http';
 import { HistorialProvider } from '../providers/historial/historial';
 
 import { Camera } from '@ionic-native/camera';
+import { ImagePicker } from '@ionic-native/image-picker';
+
 registerLocaleData(localeEs);
 
 
@@ -126,7 +128,8 @@ registerLocaleData(localeEs);
     ApiProvider,
     AuthServiceProvider,
     HistorialProvider,
-    Camera
+    Camera,
+    ImagePicker
   ]
 })
 export class AppModule {}
