@@ -31,6 +31,7 @@ import { SuccessStoriesPage } from '../pages/success-stories/success-stories';
 import { FeedPage } from '../pages/feed/feed';
 import {ProfilePage} from '../pages/profile/profile';
 import {CreatePetPage} from '../pages/create-pet/create-pet';
+import {ChangepasswordPage} from '../pages/changepassword/changepassword';
 
 
 import { IonicStorageModule } from '@ionic/storage';
@@ -77,6 +78,7 @@ registerLocaleData(localeEs);
     SuccessStoriesPage,
     FeedPage,
     CreatePetPage,
+    ChangepasswordPage,
     ProfilePage
 
   ],
@@ -116,6 +118,7 @@ registerLocaleData(localeEs);
     SuccessStoriesPage,
     FeedPage,
     CreatePetPage,
+    ChangepasswordPage,
     ProfilePage
 
   ],

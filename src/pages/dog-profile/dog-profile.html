@@ -9,6 +9,7 @@
 <ion-content fullscreen>
 <img src="https://www.chikavi.com/{{dog.imagen}}" style="position: relative;top:-4.5em;max-height: auto;" alt="">
 	<ion-grid id="sectionInfo" style="margin-top:-5em;" >
+		
 	<h2 text-center>{{ dog.nombre }}</h2>
 		<ion-row >
 			<ion-col text-center>
@@ -27,6 +28,9 @@
 			</ion-col>
 		</ion-row>
 	</ion-grid>
+	<div *ngIf="owner">
+			<button ion-button block color="danger" (click)="advertencia(dog.id)">Eliminar </button>
+		</div>
 <ion-card id="description">
 
   <ion-card-header>

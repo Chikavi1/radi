@@ -1,43 +1,33 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams,ViewController } from 'ionic-angular';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {  NavController, NavParams,ViewController } from 'ionic-angular';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { ImagePicker, ImagePickerOptions } from '@ionic-native/image-picker';
+import { ApiProvider } from '../../providers/api/api';
 
-/**
- * Generated class for the CreatePetPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
-@IonicPage()
 @Component({
   selector: 'page-create-pet',
   templateUrl: 'create-pet.html',
 })
 export class CreatePetPage {
- title;
- description;
- toppings;
- myForm: FormGroup;
+	datos:any = [];
 
  imagenPreview: string = "";
- imagen64:string;
 
   constructor(public navCtrl: NavController,
-  	public formBuilder: FormBuilder,
   	 public  viewCtrl: ViewController,
   	  public navParams: NavParams,
   	  private camera: Camera,
-  	  private imagePicker: ImagePicker) {
-  }
+  	  private imagePicker: ImagePicker,
+  	  public api:ApiProvider) {
+  	  }
 
  closeModal(){
      this.viewCtrl.dismiss();
    }
 
 	mostrar_camara(){
+
 		const options: CameraOptions = {
 		  quality: 70,
 		  destinationType: this.camera.DestinationType.DATA_URL,
@@ -48,14 +38,11 @@ export class CreatePetPage {
 		}
 
 		this.camera.getPicture(options).then((imageData) => {
-		 // imageData is either a base64 encoded string or a file URI
-		 // If it's base64 (DATA_URL):
 		 this.imagenPreview = 'data:image/jpeg;base64,' + imageData;
+		 this.datos.imagen = this.imagenPreview;
 		}, (err) => {
-		 // Handle error
 		 console.log("Error en camera", JSON.stringify(err));
 		});
-
 }
 
   open_gallery(){
@@ -70,37 +57,20 @@ export class CreatePetPage {
 		}
 		this.camera.getPicture(options).then((imageData) => {
 			this.imagenPreview = 'data:image/jpeg;base64,' + imageData;
+			this.datos.imagen = this.imagenPreview;
 		},(err) => {
 		 // Handle error
 		 console.log("Error en camera", JSON.stringify(err));
 		});
   	}
 
-  seleccionar_foto(){
-
-	    let opciones:ImagePickerOptions = {
-	      quality: 70,
-	      outputType: 1,
-	      maximumImagesCount: 1
-	    }
 
 
-    this.imagePicker.getPictures(opciones).then((results) => {
-
-      for (var i = 0; i < results.length; i++) {
-          // console.log('Image URI: ' + results[i]);
-          this.imagenPreview = 'data:image/jpeg;base64,' + results[i];
-          this.imagen64 = results[i];
-      }
-
-    }, (err) => {
-
-      console.log( "ERROR en selector", JSON.stringify(err) );
-
-    });
-
-    }
-
+   crear(){
+   	this.api.createDogProfile(this.datos).then((data) => console.log(data));
+   	console.log(this.datos);
+    this.closeModal();
+   }
 
 
 

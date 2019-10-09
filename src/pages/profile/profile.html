@@ -1,9 +1,5 @@
-<!--
-  Generated template for the ProfilePage page.
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css">
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
   <ion-navbar color="home" no-border>
@@ -16,21 +12,15 @@
   </ion-navbar>
 
 </ion-header>
-<ion-content padding>
+<ion-content style="background: #f0f4f8;" >
 	<div *ngIf="isactive">
-		<h2 text-center><strong>Mascotas</strong></h2>
-		<ion-row>
-			<div class="round-button green-color" (click)="goToCreatePet()"><div class="round-button-circle green-color" style="border:10px solid  !important;"><a class="round-button" style="background: #155851;">Agregar</a></div></div>
+	<ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
 
-			<div class="round-button" *ngFor="let perro of perros">
-				<div class="round-button-circle" (click)="abrir_perfil(perro.qr_code)">
-					<a  class="round-button" >
-						{{perro.nombre}}
-					</a>
-				</div>
-			</div>
-		</ion-row>
-			<h2 text-center>{{datos.name}}</h2>
+		<div  class="animated delay-1s fadeIn" >
+			
+		<h1 text-center><strong>{{datos.name}}</strong></h1>
 		<ion-row>
 			<ion-col text-center>
 				<p ><strong>Correo</strong></p>
@@ -41,15 +31,38 @@
 				<p>{{datos.created_at}}</p>
 			</ion-col>
 		</ion-row>
-	
+		</div>
+			
+		<div class="animated delay-2s zoomIn" >
+		<h4 text-center>Mascotas</h4>
+		<ion-row >
+			<div class="round-button green-color" (click)="goToCreatePet()"><div class="round-button-circle green-color" style="border:10px solid  !important;"><a class="round-button" style="background: #155851;">Agregar</a></div></div>
 
+			<div class="round-button" *ngFor="let perro of perros">
+				<div class="round-button-circle" (click)="abrir_perfil(perro.qr_code)">
+					<a  class="round-button" >
+						{{perro.nombre}}
+					</a>
+				</div>
+			</div>
+		</ion-row>
+		</div>
+		
+		
 
-    <ion-footer no-shadow>
-		<ion-toolbar position="bottom">
+	<ion-row class="animated delay-3s fadeIn" >
+		
+		  <button ion-item  block (click)="openchangepassword()" style="background: #f0f4f8;">
+		  	<ion-icon  item-start name="lock"></ion-icon>
+		    Cambiar contraseña
+		  </button> 
+		
+		<ion-toolbar >
       		<button ion-button class="register-btn  color-red" block clear (click)="logout()">Cerrar sesión</button>
 		</ion-toolbar>
-	</ion-footer>
-
+	
+	</ion-row>
+	
 	</div>
 
 
@@ -59,11 +72,11 @@
         <ion-col>
           <ion-list inset>
 
-            <ion-item>
-              <ion-input type="text" placeholder="Correo" name="email" [(ngModel)]="email"   required></ion-input>
+            <ion-item style="background: #f0f4f8;">
+              <ion-input  type="text" placeholder="Correo" name="email" [(ngModel)]="email"   required></ion-input>
             </ion-item>
 
-            <ion-item>
+            <ion-item style="background: #f0f4f8;">
               <ion-input type="password" placeholder="Contraseña" name="password" [(ngModel)]="password"  required></ion-input>
             </ion-item>
 
@@ -71,8 +84,8 @@
         </ion-col>
       </ion-row>
 
-      <ion-row>
-        <button ion-button color="home" class="submit-btn" full round  type="submit" [disabled]="!registerForm.form.valid">Ingresar</button>
+      <ion-row padding>
+        <button  ion-button color="home" class="submit-btn" full round  type="submit" [disabled]="!registerForm.form.valid">Ingresar</button>
       </ion-row>
 
     </form>

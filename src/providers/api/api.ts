@@ -7,12 +7,44 @@ import { Observable } from 'rxjs';
 export class ApiProvider {
 	baseUrl:string = "https://www.chikavi.com/api/";
 	baseUrlLocal:string = "http://127.0.0.1:8000/api/";
+	imagen;
 	  constructor(public http: HttpClient) {
-
-	  }
+	  	  }
 	  getDogs(id){
-	  	return this.http.get(this.baseUrlLocal+"getDogs?user_id="+id);
+	  	return this.http.get(this.baseUrl+"getDogs?user_id="+id);
 	  }
+
+
+	createDogProfile(datos){
+  		let postdata = new FormData();
+  		postdata.append('nombre',datos.nombre);
+  		postdata.append('especie',datos.especie);
+  		postdata.append('raza',datos.raza);
+  		postdata.append('color',datos.color);
+  		postdata.append('image',datos.imagen);
+  		postdata.append('sexo',datos.sexo);
+  		postdata.append('senas',datos.senas);
+  		postdata.append('notas',datos.notas);
+  		postdata.append('status',datos.status);
+  		postdata.append('place'," ");
+  		postdata.append('user_id',localStorage.getItem("user"));
+  		postdata.append('owner'," ");
+  		postdata.append('history'," ");
+
+	  	return new Promise(resolve => {
+		  this.http.post(this.baseUrl+"createdog",postdata)
+		     .subscribe(data => {
+		       resolve(data);
+		      });
+		 });
+	}
+
+	deleteDog($dog_id){
+		let user_id = localStorage.getItem("user");
+		return this.http.get(this.baseUrl+"deletedog?id="+$dog_id+"&user_id="+user_id	);
+	}
+
+
 	  solicitud(data,id):Observable <any> {
 	    let nombre = data.nombre;
 	  	let telefono = data.telefono;

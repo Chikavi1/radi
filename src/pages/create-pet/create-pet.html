@@ -8,13 +8,11 @@
 
   <ion-navbar color="home" no-border>
    <ion-buttons>
-    <!--   <button ion-button 
+       <button ion-button 
           (click)="closeModal()">
         Cerrar      
-      </button> -->
-        <button ion-button menuToggle >
-          <ion-icon name="menu" style="color:#FFEB3B;"></ion-icon>
-          </button>
+      </button> 
+        
     </ion-buttons>
   </ion-navbar>
 
@@ -23,29 +21,67 @@
 
 <ion-content padding>
 	<h1 text-center>Crear Perfil de mascota</h1>
-  <ion-item *ngIf="imagenPreview">
-    <img [src]="imagenPreview">
-    
+  
+  <ion-item>
+    <ion-input placeholder="Nombre" [(ngModel)]="datos.nombre" clearInput></ion-input>
   </ion-item>
+   <ion-item>
+    <ion-input placeholder="raza" [(ngModel)]="datos.raza" clearInput></ion-input>
+  </ion-item>
+   <ion-item>
+    <ion-input placeholder="color de pelaje" [(ngModel)]="datos.color" clearInput></ion-input>
+  </ion-item>
+   <ion-item>
+    <ion-label>Especie</ion-label>
+    <ion-select [(ngModel)]="datos.especie">
+      <ion-option value="perro">Perro</ion-option>
+      <ion-option value="gato">Gato</ion-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label>Sexo</ion-label>
+    <ion-select [(ngModel)]="datos.sexo">
+      <ion-option value="macho">Macho</ion-option>
+      <ion-option value="Hembra">Hembra</ion-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label>Estado</ion-label>
+    <ion-select [(ngModel)]="datos.status">
+      <ion-option value="adoptado">Adoptado</ion-option>
+      <ion-option value="no_adoptado">Sin adoptar</ion-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+  <ion-textarea placeholder="Señas particulares(Describe a {{datos.nombre}} )" [(ngModel)]="datos.senas" ></ion-textarea>
+</ion-item>
+<ion-item>
+  <ion-textarea placeholder="Notas(cosas que quieras que los demas sepan de {{datos.nombre}})" [(ngModel)]="datos.notas"></ion-textarea>
+</ion-item>
 
+    <ion-label text-center style="color:#8D99AE;">Foto de perfil</ion-label>
     <ion-grid>
       <ion-row>
         <ion-col>
-          <button ion-button item-left block (click)="open_gallery()">
-             <ion-icon name="photos">
-            &nbsp;Seleccionar
-          </ion-icon>  
+          <button ion-button color="blue2" item-left block (click)="open_gallery()">
+             <ion-icon name="photos"></ion-icon>&nbsp;Seleccionar  
           </button>
         </ion-col>
         <ion-col>
-        <button ion-button block item-left>
-          <ion-icon name="camera" (click)="mostrar_camara()">
-            &nbsp; Cámara
-          </ion-icon>  
+        <button ion-button color="blue1" block item-left>
+          <ion-icon name="camera" (click)="mostrar_camara()"></ion-icon>&nbsp; Cámara
         </button>
         </ion-col>
       </ion-row>            
     </ion-grid>
+    <ion-item *ngIf="imagenPreview">
+    <img [src]="imagenPreview">
+  </ion-item>
+      <ion-row>
+        <button ion-button color="home" class="submit-btn" full round  type="submit" 
+        [disabled]="!datos.nombre || !datos.raza || !datos.especie || !datos.color || !datos.sexo || !datos.status || !datos.senas || !datos.notas || !datos.imagenPreview "
+        (click)="crear()">Crear perfil</button>
+      </ion-row>
 </ion-content>
 
 

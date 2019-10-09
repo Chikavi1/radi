@@ -1,3 +1,23 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Eliminar la carpeta en cuanto funcione todo.
+
+
+
+
+
 import { Component } from '@angular/core';
 import {  NavController, AlertController, LoadingController, Loading } from 'ionic-angular';
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
