@@ -1,38 +1,45 @@
 <ion-header>
 
   <ion-navbar color="home" no-border>
+    <ion-row>
+      
     <ion-buttons>
       <button ion-button 
           (click)="closeModal()">
         Cerrar      
       </button>
     </ion-buttons>
+      <ion-title>Registrar cuenta</ion-title>
+    </ion-row>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-  <h1 text-center>Registrar cuenta</h1>
   <form (ngSubmit)="register()" #registerForm="ngForm">
       <ion-row>
         <ion-col>
           <ion-list inset>
 
-            <ion-item>
-              <ion-input type="text" placeholder="Nombre" name="name" [(ngModel)]="name" required></ion-input>
+            <ion-item  style="background: #e2ede7;">
+              <ion-label><ion-icon name="contact"></ion-icon></ion-label>
+              <ion-input  style="background: #e2ede7;" type="text" placeholder="Nombre" name="name" [(ngModel)]="name" required></ion-input>
             </ion-item>
 
-            <ion-item>
-              <ion-input type="text" placeholder="Correo electronico" name="email" [(ngModel)]="email" required></ion-input>
+            <ion-item style="background: #e2ede7;">
+               <ion-label><ion-icon name="mail"></ion-icon></ion-label>
+              <ion-input  style="background: #e2ede7;" type="text" placeholder="Correo electronico" name="email" [(ngModel)]="email" required></ion-input>
             </ion-item>
 
-            <ion-item>
-              <ion-input type="password" placeholder="Contraseña" name="password" [(ngModel)]="password" required></ion-input>
+            <ion-item style="background: #e2ede7;">
+               <ion-label><ion-icon name="lock"></ion-icon></ion-label>
+              <ion-input  style="background: #e2ede7;" type="password" placeholder="Contraseña" name="password" [(ngModel)]="password" required></ion-input>
             </ion-item>
 
-            <ion-item>
-              <ion-input type="password" placeholder="Confirmar contraseña" name="confirmation_password" [(ngModel)]="confirmation_password" required></ion-input>
+            <ion-item style="background: #e2ede7;">
+               <ion-label><ion-icon name="done-all"></ion-icon></ion-label>
+              <ion-input  style="background: #e2ede7;" type="password" placeholder="Confirmar contraseña" name="confirmation_password" [(ngModel)]="confirmation_password" required></ion-input>
             </ion-item>
 
           </ion-list>
@@ -41,9 +48,12 @@
 
       <ion-row>
         <ion-col class="signup-col">
-          <button ion-button class="submit-btn" full type="submit" [disabled]="!registerForm.form.valid">Registrar</button>
+          <button ion-button color="green" class="submit-btn" full round type="submit" [disabled]="!registerForm.form.valid">Registrar</button>
         </ion-col>
       </ion-row>
 
     </form>
+    <div class="wrapper">
+  <div class="wave"></div>
+</div>
 </ion-content>
