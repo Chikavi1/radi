@@ -17,11 +17,6 @@ export class ShowAlliesPage {
   datos = [];
   constructor(public navCtrl: NavController, public navParams: NavParams) {
  	this.datos =this.navParams.get("datos");
- 	console.log(this.datos);
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ShowAlliesPage');
   }
 
 }

@@ -10,7 +10,7 @@ export class AliadosPage {
   allies : any[];
   constructor(public navCtrl: NavController, public navParams: NavParams,public AP:ApiProvider) {
   	this.AP.getAllies().subscribe(
-  			(data)  => {this.allies = data,console.log(data)},
+  			(data)  => {this.allies = data},
   			(error) => {console.log(error)}
   				);
   	}

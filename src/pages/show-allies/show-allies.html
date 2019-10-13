@@ -1,43 +1,38 @@
-
-<ion-header no-border>
-
-  <ion-navbar color="home">
-    <ion-title>{{datos.nombre}}</ion-title>
+<ion-header translucent="true" no-border>
+  <ion-navbar color=‘light’ transparent hide-nav-bar="true">
+    	
+    <ion-title ><span style="color:yellow !important;">{{ datos.nombre }}</span></ion-title>
   </ion-navbar>
-
 </ion-header>
 
 
-<ion-content >
-<ion-card>
-		 <img src="https://www.chikavi.com/{{datos.imagen}}"/>
-	</ion-card>
+<ion-content fullscreen >
+	 <img src="https://www.chikavi.com/{{datos.imagen}}" style="position: relative;top:-4.5em;max-height: auto;"/>
 
-	<h2 text-center>{{ datos.nombre }}</h2>
+
+
+	<h2 text-center style="margin-top:-5em;">{{ datos.nombre }}</h2>
 	
-	<ion-grid id="sectionInfo" >
+	<ion-grid  >
 		<ion-row>
 			
 			<ion-col text-center>
 				<p>Domicilio</p>
-				<p>{{datos.domicilio}}</p>
+				<p>{{datos.direccion}}</p>
 			</ion-col>
 		</ion-row>
 		<ion-row >
 		<ion-col text-center>
-
-				<p class="clave">telefono</p>
-				<p>{{datos.telefono }}</p>
-				<p class="clave">horario </p>
-				<p>{{datos.horario}}</p>
-			</ion-col>
-
-			<ion-col text-center>
-				<p class="clave">telefono</p>
-				<p>{{datos.telefono}}</p>
-				<p class="clave">mvz</p>
+				 <ion-icon name="call" style="zoom:2.0;color:green;" ></ion-icon>
+				 <p>{{datos.telefono }}</p>
+		</ion-col>
+		<ion-col text-center>
+				<ion-icon name="paw" style="zoom:2.0;color:#F9564F;" ></ion-icon>
 				<p>{{datos.personal}}</p>
-
+		</ion-col>
+		<ion-col text-center>
+				<ion-icon name="time" style="zoom:2.0;color:blue;" ></ion-icon>
+				<p>{{datos.horario}}</p>
 			</ion-col>
 		</ion-row>
 	</ion-grid>

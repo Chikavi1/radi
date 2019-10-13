@@ -23,12 +23,15 @@
 	<h1 text-center>Crear Perfil de mascota</h1>
   
   <ion-item>
+    <ion-label><ion-icon name="clipboard" style="color:#172034;"></ion-icon></ion-label>
     <ion-input placeholder="Nombre" [(ngModel)]="datos.nombre" clearInput></ion-input>
   </ion-item>
    <ion-item>
+    <ion-label><ion-icon name="paw" style="color:brown;"></ion-icon></ion-label>
     <ion-input placeholder="raza" [(ngModel)]="datos.raza" clearInput></ion-input>
   </ion-item>
    <ion-item>
+    <ion-label><ion-icon name="color-palette" style="color:orange;"></ion-icon></ion-label>
     <ion-input placeholder="color de pelaje" [(ngModel)]="datos.color" clearInput></ion-input>
   </ion-item>
    <ion-item>
@@ -68,12 +71,13 @@
           </button>
         </ion-col>
         <ion-col>
-        <button ion-button color="blue1" block item-left>
-          <ion-icon name="camera" (click)="mostrar_camara()"></ion-icon>&nbsp; Cámara
+        <button ion-button color="blue1" block item-left (click)="mostrar_camara()">
+          <ion-icon name="camera" ></ion-icon>&nbsp; Cámara
         </button>
         </ion-col>
       </ion-row>            
     </ion-grid>
+
     <ion-item *ngIf="imagenPreview">
     <img [src]="imagenPreview">
   </ion-item>

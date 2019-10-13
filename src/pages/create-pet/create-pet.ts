@@ -39,7 +39,7 @@ export class CreatePetPage {
 
 		this.camera.getPicture(options).then((imageData) => {
 		 this.imagenPreview = 'data:image/jpeg;base64,' + imageData;
-		 this.datos.imagen = this.imagenPreview;
+		 this.datos.imagenPreview = this.imagenPreview;
 		}, (err) => {
 		 console.log("Error en camera", JSON.stringify(err));
 		});
@@ -57,7 +57,7 @@ export class CreatePetPage {
 		}
 		this.camera.getPicture(options).then((imageData) => {
 			this.imagenPreview = 'data:image/jpeg;base64,' + imageData;
-			this.datos.imagen = this.imagenPreview;
+			this.datos.imagenPreview = this.imagenPreview;
 		},(err) => {
 		 // Handle error
 		 console.log("Error en camera", JSON.stringify(err));

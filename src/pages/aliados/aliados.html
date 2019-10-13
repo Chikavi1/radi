@@ -16,19 +16,16 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content >
 	<ion-refresher (ionRefresh)="doRefresh($event)">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
 <ion-card *ngFor="let ally of allies" (click)="goDetails(ally)">
   <img src="https://www.chikavi.com/{{ally.imagen}}"/>
-  <ion-card-content>
+  <ion-card-content style="background: #17202F;">
     <ion-card-title>
-    {{ally.nombre}}
+    <p text-center style="color:white;">{{ally.nombre}}</p>
       </ion-card-title>
-    <p class="texr" >
-      ver mas...
-   </p>
   </ion-card-content>
 </ion-card>
 </ion-content>

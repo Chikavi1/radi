@@ -29,7 +29,13 @@
 		</ion-row>
 	</ion-grid>
 	<div *ngIf="owner">
-			<button ion-button block color="danger" (click)="advertencia(dog.id)">Eliminar </button>
+		<ion-row>
+			<ion-col></ion-col>
+			<ion-col text-center><ion-icon name="locate" style="zoom:2.0;color:blue;"></ion-icon><br>Perdi mi perro</ion-col>
+			<ion-col text-center><ion-icon name="create" style="zoom:2.0;color:green;"></ion-icon><br>Editar</ion-col>
+			<ion-col text-center (click)="advertencia(dog.id)"><ion-icon name="trash" style="zoom:2.0;color:red;"></ion-icon><br>Eliminar</ion-col>
+			<ion-col></ion-col>
+		</ion-row>
 		</div>
 <ion-card id="description">
 
