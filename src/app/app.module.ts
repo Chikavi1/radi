@@ -22,7 +22,6 @@ import { TerminosPage } from '../pages/terminos/terminos';
 import { FinishFormAdoptPage } from '../pages/finish-form-adopt/finish-form-adopt';
 import { ShowAlliesPage } from '../pages/show-allies/show-allies';
 import { HistoryPage } from '../pages/history/history';
-import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
 import { InstructionsPage } from '../pages/instructions/instructions';
 import {ErrorPage} from '../pages/error/error';
@@ -70,7 +69,6 @@ registerLocaleData(localeEs);
     AliadosPage,
     ShowAlliesPage,
     RegisterPage,
-    LoginPage,
     HistoryPage,
     InstructionsPage,
     ErrorPage,
@@ -110,7 +108,6 @@ registerLocaleData(localeEs);
     AliadosPage,
     ShowAlliesPage,
     RegisterPage,
-    LoginPage,
     HistoryPage,
     InstructionsPage,
     ErrorPage,

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, AlertController,ModalController, ViewController } from 'ionic-angular';
+import { IonicPage,  AlertController,ModalController, ViewController } from 'ionic-angular';
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 import { ProfilePage } from '../profile/profile';
 
@@ -24,7 +24,6 @@ export class RegisterPage {
   password:any;
   confirmation_password:any;
   constructor(
-    private nav: NavController,
     private auth: AuthServiceProvider,
     private alertCtrl: AlertController,
     public  viewCtrl: ViewController,

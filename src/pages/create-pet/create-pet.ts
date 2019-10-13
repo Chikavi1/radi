@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {  NavController, NavParams,ViewController } from 'ionic-angular';
 import { Camera, CameraOptions } from '@ionic-native/camera';
-import { ImagePicker, ImagePickerOptions } from '@ionic-native/image-picker';
+import { ImagePicker } from '@ionic-native/image-picker';
 import { ApiProvider } from '../../providers/api/api';
 
 
@@ -18,7 +18,6 @@ export class CreatePetPage {
   	 public  viewCtrl: ViewController,
   	  public navParams: NavParams,
   	  private camera: Camera,
-  	  private imagePicker: ImagePicker,
   	  public api:ApiProvider) {
   	  }
 
@@ -68,7 +67,6 @@ export class CreatePetPage {
 
    crear(){
    	this.api.createDogProfile(this.datos).then((data) => console.log(data));
-   	console.log(this.datos);
     this.closeModal();
    }
 

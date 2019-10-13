@@ -14,8 +14,6 @@ import { AdoptPage } from '../pages/adopt/adopt';
 import { SuccessStoriesPage } from '../pages/success-stories/success-stories';
 import { FeedPage } from '../pages/feed/feed';
 import { CreatePetPage } from '../pages/create-pet/create-pet';
-
-import { ProfilePage } from '../pages/profile/profile';
 //import { DonationsPage } from '../pages/donations/donations';
 import { timer } from 'rxjs/observable/timer';
 @Component({

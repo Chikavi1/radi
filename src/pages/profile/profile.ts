@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams,ModalController, ViewController, AlertController } from 'ionic-angular';
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
-import { LoginPage } from '../login/login';
 import { CreatePetPage } from '../create-pet/create-pet';
 import { RegisterPage } from '../register/register';
 import { ApiProvider } from '../../providers/api/api';
