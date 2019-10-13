@@ -21,7 +21,7 @@ export class ApiProvider {
   		postdata.append('especie',datos.especie);
   		postdata.append('raza',datos.raza);
   		postdata.append('color',datos.color);
-  		postdata.append('image',datos.imagen);
+  		postdata.append('image',datos.imagenPreview);
   		postdata.append('sexo',datos.sexo);
   		postdata.append('senas',datos.senas);
   		postdata.append('notas',datos.notas);
