@@ -4,6 +4,8 @@ import {VaccinationsPage} from '../vaccinations/vaccinations';
 import { DewormingsPage} from '../dewormings/dewormings';
 import { FormAdoptPage } from '../form-adopt/form-adopt';
 import { ApiProvider } from '../../providers/api/api';
+import { EditPetPage } from '../edit-pet/edit-pet';
+import { LostDogPage } from '../lost-dog/lost-dog';
 
 @Component({
   selector: 'page-dog-profile',
@@ -67,9 +69,14 @@ export class DogProfilePage {
   alert.present();
 }
 
-scan(){
-
+showeditar(dog){
+  this.navCtrl.push(EditPetPage,{'dog':dog});
 }
+
+showlostdog(){
+  this.navCtrl.push(LostDogPage);
+}
+
 showvaccinations(){
 	this.navCtrl.push(VaccinationsPage,{'vaccinations': this.vaccinations});
 }

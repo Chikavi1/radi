@@ -10,15 +10,16 @@ import { ApiProvider } from '../../providers/api/api';
   templateUrl: 'create-pet.html',
 })
 export class CreatePetPage {
-	datos:any = [];
+datos:any = [];
 
- imagenPreview: string = "";
+ imagenbase: string = "";
 
   constructor(public navCtrl: NavController,
   	 public  viewCtrl: ViewController,
   	  public navParams: NavParams,
   	  private camera: Camera,
   	  public api:ApiProvider) {
+  		this.imagenbase = "https://fakeimg.pl/400x400/17202f/?text=foto";
   	  }
 
  closeModal(){
@@ -37,8 +38,8 @@ export class CreatePetPage {
 		}
 
 		this.camera.getPicture(options).then((imageData) => {
-		 this.imagenPreview = 'data:image/jpeg;base64,' + imageData;
-		 this.datos.imagenPreview = this.imagenPreview;
+		 this.imagenbase = 'data:image/jpeg;base64,' + imageData;
+		 this.datos.imagenPreview = this.imagenbase;
 		}, (err) => {
 		 console.log("Error en camera", JSON.stringify(err));
 		});
@@ -55,8 +56,8 @@ export class CreatePetPage {
 		  targetWidth: 720
 		}
 		this.camera.getPicture(options).then((imageData) => {
-			this.imagenPreview = 'data:image/jpeg;base64,' + imageData;
-			this.datos.imagenPreview = this.imagenPreview;
+			this.imagenbase = 'data:image/jpeg;base64,' + imageData;
+			this.datos.imagenPreview = this.imagenbase;
 		},(err) => {
 		 // Handle error
 		 console.log("Error en camera", JSON.stringify(err));

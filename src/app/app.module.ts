@@ -31,6 +31,8 @@ import { FeedPage } from '../pages/feed/feed';
 import {ProfilePage} from '../pages/profile/profile';
 import {CreatePetPage} from '../pages/create-pet/create-pet';
 import {ChangepasswordPage} from '../pages/changepassword/changepassword';
+import { EditPetPage } from '../pages/edit-pet/edit-pet';
+import {LostDogPage} from '../pages/lost-dog/lost-dog';
 
 
 import { IonicStorageModule } from '@ionic/storage';
@@ -77,7 +79,9 @@ registerLocaleData(localeEs);
     FeedPage,
     CreatePetPage,
     ChangepasswordPage,
-    ProfilePage
+    ProfilePage,
+    EditPetPage,
+    LostDogPage
 
   ],
   imports: [
@@ -116,7 +120,9 @@ registerLocaleData(localeEs);
     FeedPage,
     CreatePetPage,
     ChangepasswordPage,
-    ProfilePage
+    ProfilePage,
+    EditPetPage,
+    LostDogPage
 
   ],
   providers: [
