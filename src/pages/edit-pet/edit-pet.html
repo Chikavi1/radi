@@ -1,0 +1,91 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title></ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+	<h3 text-center>Editar {{dog.nombre}}</h3>
+	<ion-row>
+		<ion-col></ion-col>
+		<ion-col>
+			<ion-avatar item-center>
+   				<img [src]="imagenload">
+			</ion-avatar>
+		</ion-col>
+		<ion-col></ion-col>
+	</ion-row>
+  
+	<hr>
+
+
+  	 <ion-label text-center style="color:#8D99AE;">Foto de perfil</ion-label>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <button ion-button color="blue2" item-left block (click)="open_gallery()">
+             <ion-icon name="photos"></ion-icon>&nbsp;Seleccionar  
+          </button>
+        </ion-col>
+        <ion-col>
+        <button ion-button color="blue1" block item-left (click)="mostrar_camara()">
+          <ion-icon name="camera" ></ion-icon>&nbsp; Cámara
+        </button>
+        </ion-col>
+      </ion-row>            
+    </ion-grid>
+
+  <ion-item>
+    <ion-label><ion-icon name="clipboard" style="color:#172034;"></ion-icon></ion-label>
+    <ion-input placeholder="Nombre" [(ngModel)]="dog.nombre" clearInput></ion-input>
+  </ion-item>
+   <ion-item>
+    <ion-label><ion-icon name="paw" style="color:brown;"></ion-icon></ion-label>
+    <ion-input placeholder="raza" [(ngModel)]="dog.raza" clearInput></ion-input>
+  </ion-item>
+   <ion-item>
+    <ion-label><ion-icon name="color-palette" style="color:orange;"></ion-icon></ion-label>
+    <ion-input placeholder="color de pelaje" [(ngModel)]="dog.color" clearInput></ion-input>
+  </ion-item>
+
+   <ion-item>
+    <ion-label>Especie</ion-label>
+    <ion-select [(ngModel)]="dog.especie">
+      <ion-option value="perro">Perro</ion-option>
+      <ion-option value="gato">Gato</ion-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label>Sexo</ion-label>
+    <ion-select [(ngModel)]="dog.sexo">
+      <ion-option value="macho">Macho</ion-option>
+      <ion-option value="Hembra">Hembra</ion-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label>Estado</ion-label>
+    <ion-select [(ngModel)]="dog.status">
+      <ion-option value="adoptado">Adoptado</ion-option>
+      <ion-option value="no_adoptado">Sin adoptar</ion-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+  <ion-textarea placeholder="Señas particulares(Describe a {{dog.nombre}} )" [(ngModel)]="dog.senas" ></ion-textarea>
+</ion-item>
+<ion-item>
+  <ion-textarea placeholder="Notas(cosas que quieras que los demas sepan de {{dog.nombre}})" [(ngModel)]="dog.notas"></ion-textarea>
+</ion-item>
+
+   
+
+    <ion-item *ngIf="imagenPreview">
+    <img [src]="imagenPreview">
+  </ion-item>
+      <ion-row>
+        <button ion-button color="home" class="submit-btn" full round  type="submit" 
+        (click)="crear()">Editar perfil</button>
+      </ion-row>
+</ion-content>
+
+
